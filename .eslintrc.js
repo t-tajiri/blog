@@ -4,8 +4,9 @@ module.exports = {
     browser: true,
     node: true
   },
+  plugins: ['@typescript-eslint'],
   parserOptions: {
-    parser: 'babel-eslint'
+    parser: '@typescript-eslint/parser'
   },
   extends: [
     '@nuxtjs',
