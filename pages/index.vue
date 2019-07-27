@@ -1,44 +1,55 @@
 <template>
-  <div class="container">
-    <div>
-      <div>
-        <input
-          v-model="newArticle"
-          type="text"
-        >
-        <button @click="addArticle">
-          add
-        </button>
-      </div>
-      <div class="spacer" />
-      <div>
-        {{ article }}
-      </div>
-    </div>
-  </div>
+  <section>
+    <Container>
+      <h1>My blog</h1>
+    </Container>
+    <Container flex>
+      <ArticleCard
+        v-for="(blog, index) in blogList"
+        :key="index"
+        :index="index"
+        :article-info="blog"
+      />
+    </Container>
+  </section>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
+import Container from '~/components/Container.vue'
+import ArticleCard from '~/components/ArticleCard.vue'
+// @ts-ignore
+import blogs from '~/content/blogs.json'
 
 @Component({
-  name: 'index'
+  name: 'index',
+  components: {
+    ArticleCard,
+    Container
+  },
+  async asyncData({ app }) {
+    async function awaitImport(blog) {
+      const markDown = await import(`~/content/blog/${blog.slug}.md`)
+      return {
+        attributes: markDown.attributes,
+        link: blog.slug
+      }
+    }
+
+    const blogList = await Promise.all(
+      blogs.map(blog => awaitImport(blog))
+    ).then((contents) => {
+      return {
+        blogList: contents
+      }
+    })
+
+    return blogList
+  }
 })
 export default class Index extends Vue {
-  article: Array<String> = ['test article']
-
-  newArticle: String = ''
-
-  addArticle(): void {
-    this.article.push(this.newArticle)
-    // TODO refactor
-    this.newArticle = ''
-  }
 }
 </script>
 
 <style>
-  .spacer {
-    margin-top: 1em;
-  }
 </style>
