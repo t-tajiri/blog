@@ -44,5 +44,50 @@ import { Component, Vue } from 'vue-property-decorator'
   }
 })
 export default class Slug extends Vue {
+  title: string = ''
+
+  date: string = ''
+
+  update: string = ''
+
+  slug: unknown
+
+  head() {
+    return {
+      title: `${this.title} | 'Sample'`,
+      meta: [
+        {
+          hid: 'article:published_time',
+          property: 'article:published_time',
+          content: this.date
+        },
+        {
+          hid: 'article:modified_time',
+          property: 'article:modified_time',
+          content: this.update
+        },
+        {
+          hid: 'og:updated_time',
+          property: 'og:updated_time',
+          content: this.update
+        },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: `https://<domain>/blog/${this.slug}`
+        },
+        {
+          hid: 'og:title',
+          property: 'og:title',
+          content: `${this.title} | Code Tribe`
+        },
+        {
+          hid: 'og:type',
+          property: 'og:type',
+          content: 'article'
+        }
+      ]
+    }
+  }
 }
 </script>
