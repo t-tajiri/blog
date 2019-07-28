@@ -9,7 +9,7 @@ collections:
     label: "t-tajiri blog"
     folder: "content/blog"
     create: true
-    slug: "{{ slug }}"
+    slug: "{{ year }}-{{ month }}-{{ day }}-{{ slug }}"
     sort: "date:desc"
     fields:
       - {label: "Title", name: "title", widget: "string", required: true}
