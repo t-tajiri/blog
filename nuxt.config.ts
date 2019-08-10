@@ -45,7 +45,8 @@ const config: NuxtConfiguration = {
   */
   modules: [
     '@nuxtjs/eslint-module',
-    'nuxt-fontawesome'
+    'nuxt-fontawesome',
+    'nuxt-webfontloader'
   ],
   /*
   ** font awesome icon
@@ -60,6 +61,11 @@ const config: NuxtConfiguration = {
         ]
       }
     ]
+  },
+  webfontloader: {
+    google: {
+      families: ['Lobster:400']
+    }
   },
   /*
   ** robots

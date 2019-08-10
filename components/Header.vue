@@ -32,7 +32,6 @@ export default class Header extends Vue {
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
 .header {
   font-family: 'Lobster', cursive;
   width: 100%;
@@ -49,7 +48,6 @@ export default class Header extends Vue {
 .header__inline__title {
   color: #252525;
   font-size: 1.5rem;
-  font-weight: 700;
   text-decoration: none;
 }
 
