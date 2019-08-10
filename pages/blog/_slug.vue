@@ -1,6 +1,7 @@
 <template>
   <section class="post">
     <h1>{{ title }}</h1>
+    <img v-lazy="thumbnail" class="thumbnail" :alt="title">
     <div class="post-content" v-html="html" />
   </section>
 </template>
@@ -17,6 +18,7 @@ import { Component, Vue } from 'vue-property-decorator'
     const {
       date,
       title,
+      thumbnail,
       update
     } = attr
 
@@ -39,6 +41,7 @@ import { Component, Vue } from 'vue-property-decorator'
       published,
       updated,
       slug,
+      thumbnail,
       html: post.html
     }
   }
@@ -49,6 +52,8 @@ export default class Slug extends Vue {
   date: string = ''
 
   update: string = ''
+
+  thumbnail: unknown
 
   slug: unknown
 
@@ -85,9 +90,27 @@ export default class Slug extends Vue {
           hid: 'og:type',
           property: 'og:type',
           content: 'article'
+        },
+        {
+          hid: 'og:image',
+          property: 'og:image',
+          content: `https://<domain>${this.thumbnail}`
+        },
+        {
+          hid: 'og:image:alt',
+          property: 'og:image:alt',
+          content: this.title
         }
       ]
     }
   }
 }
 </script>
+
+<style scoped>
+.thumbnail {
+  margin-bottom: 2.4rem;
+  width: 50%;
+  height: auto;
+}
+</style>
