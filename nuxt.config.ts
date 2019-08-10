@@ -49,7 +49,7 @@ const config: NuxtConfiguration = {
   ],
   /*
   ** font awesome icon
-   */
+  */
   fontawesome: {
     imports: [
       {
@@ -60,6 +60,13 @@ const config: NuxtConfiguration = {
         ]
       }
     ]
+  },
+  /*
+  ** robots
+  */
+  robots: {
+    UserAgent: '*',
+    Disallow: '/admin'
   },
   /*
   ** Build configuration
