@@ -5,6 +5,10 @@ import { Configuration } from '~/node_modules/@types/webpack'
 
 const config: NuxtConfiguration = {
   mode: 'universal',
+  env: {
+    NUXT_ENV_GITHUB_URL: 'https://github.com/t-tajiri',
+    NUXT_ENV_TWITTER_URL: 'https://twitter.com/tajiridev'
+  },
   /*
   ** Headers of the page
   */

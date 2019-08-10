@@ -1,8 +1,5 @@
 <template>
   <section>
-    <Container>
-      <h1>My blog</h1>
-    </Container>
     <Container flex>
       <ArticleCard
         v-for="(blog, index) in blogList"
