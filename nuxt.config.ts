@@ -40,8 +40,23 @@ const config: NuxtConfiguration = {
   ** Nuxt.js modules
   */
   modules: [
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+    'nuxt-fontawesome'
   ],
+  /*
+  ** font awesome icon
+   */
+  fontawesome: {
+    imports: [
+      {
+        set: '@fortawesome/free-brands-svg-icons',
+        icons: [
+          'faTwitter',
+          'faGithub'
+        ]
+      }
+    ]
+  },
   /*
   ** Build configuration
   */
