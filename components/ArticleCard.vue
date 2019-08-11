@@ -35,6 +35,7 @@ a {
 
 article {
   display: flex;
+  margin-top: 2rem;
   justify-content: center;
 }
 
