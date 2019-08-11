@@ -119,7 +119,7 @@ export default class Slug extends Vue {
 
 <style scoped>
 .post {
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: 'Open Sans', 'Noto Sans JP', sans-serif;
   margin: 0 auto;
 }
 

@@ -67,8 +67,9 @@ const config: NuxtConfiguration = {
     google: {
       families: [
         'Lobster:400',
-        'Roboto Mono:400,700',
-        'Noto Sans JP:400,700'
+        'Open Sans:300',
+        'Noto Sans JP:400,700',
+        'Roboto Mono:400,700'
       ]
     }
   },
