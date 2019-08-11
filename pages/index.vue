@@ -4,7 +4,6 @@
       <ArticleCard
         v-for="(blog, index) in blogList"
         :key="index"
-        :index="index"
         :article-info="blog"
       />
     </Container>
