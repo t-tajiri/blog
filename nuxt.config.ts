@@ -65,7 +65,11 @@ const config: NuxtConfiguration = {
   },
   webfontloader: {
     google: {
-      families: ['Lobster:400']
+      families: [
+        'Lobster:400',
+        'Roboto Mono:400,700',
+        'Noto Sans JP:400,700'
+      ]
     }
   },
   /*

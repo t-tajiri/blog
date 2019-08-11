@@ -1,6 +1,6 @@
 <template>
   <section>
-    <Container flex>
+    <Container :flex="true">
       <ArticleCard
         v-for="(blog, index) in blogList"
         :key="index"

@@ -11,12 +11,11 @@ import Header from '~/components/Header.vue'
 
 @Component({
   name: 'Container',
-  components: { Header: Header }
+  components: {
+    Header: Header
+  }
 })
 export default class Container extends Vue {
-  narrow: boolean = false
-
-  flex: boolean = false
 }
 </script>
 

@@ -1,15 +1,25 @@
 <template>
   <section class="post">
-    <h1>{{ title }}</h1>
-    <img v-lazy="thumbnail" class="thumbnail" :alt="title">
-    <div class="post-content" v-html="html" />
+    <Container class="post__header">
+      <h1 class="post__title">
+        {{ title }}
+      </h1>
+    </Container>
+    <Container :narrow="true">
+      <img v-lazy="thumbnail" class="thumbnail" :alt="title">
+      <div class="post-content" v-html="html" />
+    </Container>
   </section>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
+import Container from '~/components/Container.vue'
 
 @Component({
+  components: {
+    Container: Container
+  },
   async asyncData({ params }) {
     const post = await import(`~/content/blog/${params.slug}.md`)
     const attr = post.attributes
@@ -108,9 +118,28 @@ export default class Slug extends Vue {
 </script>
 
 <style scoped>
+.post {
+  font-family: 'Noto Sans JP', sans-serif;
+  margin: 0 auto;
+}
+
+.post__header {
+  color: #535353;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.post__title {
+display: block;
+margin-top: 1rem;
+margin-bottom: 3rem;
+text-align: center;
+width: 100%;
+}
+
 .thumbnail {
   margin-bottom: 2.4rem;
-  width: 50%;
   height: auto;
+  width: 100%;
 }
 </style>
