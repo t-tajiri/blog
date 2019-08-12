@@ -2,7 +2,9 @@
   <nav class="header" role="navigation">
     <div class="header__inline">
       <div>
-        <nuxt-link to="/" class="header__inline__title">t-tajiri</nuxt-link>
+        <nuxt-link to="/" class="header__inline__title">
+          t-tajiri
+        </nuxt-link>
       </div>
       <ul class="header__inline__social-icons">
         <li>

@@ -4,7 +4,9 @@
       <div class="article__data">
         <div class="article__data__content">
           <nuxt-link :to="`/blog/${articleInfo.link}`">
-            <h4 class="article__data__content__title">{{ articleInfo.attributes.title }}</h4>
+            <h4 class="article__data__content__title">
+              {{ articleInfo.attributes.title }}
+            </h4>
           </nuxt-link>
           <p class="article__data__content__text" />
           <nuxt-link :to="`/blog/${articleInfo.link}`" class="article__data__content__more">
