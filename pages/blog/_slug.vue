@@ -6,8 +6,8 @@
       </h1>
     </Container>
     <Container :narrow="true">
-      <img v-lazy="thumbnail" class="thumbnail" :alt="title">
-      <div class="post-content" v-html="html" />
+      <img v-lazy="thumbnail" class="post__content__thumbnail" :alt="title">
+      <div class="post__content__slug" v-html="html" />
     </Container>
   </section>
 </template>
@@ -137,7 +137,7 @@ text-align: center;
 width: 100%;
 }
 
-.thumbnail {
+.post__content__thumbnail {
   margin-bottom: 2.4rem;
   height: auto;
   width: 100%;

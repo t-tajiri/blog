@@ -27,9 +27,9 @@ import { Component, Vue } from 'vue-property-decorator'
   name: 'Header'
 })
 export default class Header extends Vue {
-  githubUrl: string | undefined = process.env.NUXT_ENV_GITHUB_URL
+  githubUrl?: string = process.env.NUXT_ENV_GITHUB_URL
 
-  twitterUrl: string | undefined = process.env.NUXT_ENV_TWITTER_URL
+  twitterUrl?: string = process.env.NUXT_ENV_TWITTER_URL
 }
 </script>
 
