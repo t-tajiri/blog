@@ -7,7 +7,7 @@ const getFiles = (dir) => {
 
   files.forEach((file) => {
     if (fs.statSync(dir + file).isDirectory()) {
-      fileList = getFiles(dir + file + '/', fileList)
+      fileList = getFiles(dir + file + '/')
     } else {
       const markdownFile = fs.readFileSync(`content/blog/${file}`, 'utf-8')
       const fileContents = parseMarkdown(markdownFile)
