@@ -38,4 +38,32 @@ html {
   box-sizing: border-box;
   margin: 0;
 }
+
+.page-enter-active {
+  animation: acrossIn 0.2s ease-out both;
+}
+.page-leave-active {
+  animation: acrossOut 0.2s ease-in both;
+}
+
+@keyframes acrossIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-64px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes acrossOut {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(64px);
+  }
+}
 </style>
