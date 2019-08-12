@@ -1,7 +1,8 @@
+/* eslint-disable no-unused-vars */
 import NuxtConfiguration from '@nuxt/config'
-// @ts-ignore
 import blogs from './content/blogs.json'
 import { Configuration } from '~/node_modules/@types/webpack'
+/* eslint-enable */
 
 const config: NuxtConfiguration = {
   mode: 'universal',
@@ -24,7 +25,7 @@ const config: NuxtConfiguration = {
     ]
   },
   generate: {
-    routes: [].concat(blogs.map(blog => `/blog/${blog.slug}`))
+    routes: ([] as string[]).concat(blogs.map(blog => `/blog/${blog.slug}`))
   },
   /*
   ** Customize the progress-bar color
@@ -63,6 +64,9 @@ const config: NuxtConfiguration = {
       }
     ]
   },
+  /*
+  ** webfonts
+  */
   webfontloader: {
     google: {
       families: [
@@ -84,12 +88,8 @@ const config: NuxtConfiguration = {
   ** Build configuration
   */
   build: {
-    /*
-    ** You can extend webpack config here
-    */
     extend(config: Configuration, ctx) {
-      // @ts-ignore
-      config.module.rules.push({
+      config.module!.rules.push({
         test: /\.md$/,
         loader: 'frontmatter-markdown-loader',
         options: {
