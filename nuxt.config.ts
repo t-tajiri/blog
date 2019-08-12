@@ -4,6 +4,8 @@ import blogs from './content/blogs.json'
 import { Configuration } from '~/node_modules/@types/webpack'
 /* eslint-enable */
 
+const routes: string[] = ([] as string[]).concat(blogs.map(blog => `/blog/${blog.slug}`))
+
 const config: NuxtConfiguration = {
   mode: 'universal',
   env: {
@@ -25,7 +27,7 @@ const config: NuxtConfiguration = {
     ]
   },
   generate: {
-    routes: ([] as string[]).concat(blogs.map(blog => `/blog/${blog.slug}`))
+    routes: routes
   },
   /*
   ** Customize the progress-bar color
@@ -47,6 +49,7 @@ const config: NuxtConfiguration = {
   */
   modules: [
     '@nuxtjs/eslint-module',
+    '@nuxtjs/sitemap',
     'nuxt-fontawesome',
     'nuxt-webfontloader'
   ],
@@ -63,6 +66,18 @@ const config: NuxtConfiguration = {
         ]
       }
     ]
+  },
+  /*
+  ** sitemap
+  */
+  sitemap: {
+    gzip: true,
+    path: '/sitemap.xml',
+    exclude: [
+      '/admin/**'
+    ],
+    generate: true,
+    routes: routes
   },
   /*
   ** webfonts
