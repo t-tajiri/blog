@@ -57,15 +57,15 @@ import Container from '~/components/Container.vue'
   }
 })
 export default class Slug extends Vue {
-  title: string = ''
+  title?: string
 
-  date: string = ''
+  date?: string
 
-  update: string = ''
+  update?: string
 
-  thumbnail: unknown
+  thumbnail?: string
 
-  slug: unknown
+  slug?: string
 
   head() {
     return {

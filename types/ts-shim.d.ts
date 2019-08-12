@@ -12,3 +12,20 @@ declare module '*/blogs.json' {
   const value: blog[]
   export default value
 }
+
+type articleInfo = {
+  link: string,
+  attributes: attributes
+}
+
+type attributes = {
+  _meta: meta,
+  date: string,
+  thumbnail: string,
+  title: string,
+  update: string
+}
+
+type meta = {
+  resourcePath: string
+}

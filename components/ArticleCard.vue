@@ -26,7 +26,7 @@ import { Component, Prop, Vue } from 'vue-property-decorator'
 })
 export default class ArticleCard extends Vue {
   @Prop({ default: () => {} })
-  articleInfo: unknown
+  articleInfo?: articleInfo
 }
 </script>
 
