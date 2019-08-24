@@ -8,7 +8,9 @@
               {{ articleInfo.attributes.title }}
             </h4>
           </nuxt-link>
-          <p class="article__data__content__text" />
+          <p class="article__data__content__text">
+            {{ summary }}
+          </p>
           <nuxt-link :to="`/blog/${articleInfo.link}`" class="article__data__content__more">
             Read more
           </nuxt-link>
@@ -27,6 +29,14 @@ import { Component, Prop, Vue } from 'vue-property-decorator'
 export default class ArticleCard extends Vue {
   @Prop({ default: () => {} })
   articleInfo?: articleInfo
+
+  summary: string = ''
+
+  async mounted() {
+    const { attributes } = await import(`~/content/blog/${this.articleInfo!.link}.md`)
+    const { summary } = attributes
+    this.summary = summary
+  }
 }
 </script>
 
@@ -38,7 +48,6 @@ a {
 article {
   display: flex;
   margin-top: 2rem;
-  justify-content: center;
 }
 
 .article {

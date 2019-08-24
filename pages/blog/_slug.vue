@@ -29,7 +29,8 @@ import Container from '~/components/Container.vue'
       date,
       title,
       thumbnail,
-      update
+      update,
+      summary
     } = attr
 
     const dateOptions = {
@@ -50,6 +51,7 @@ import Container from '~/components/Container.vue'
       update,
       published,
       updated,
+      summary,
       slug,
       thumbnail,
       html: post.html
@@ -64,6 +66,8 @@ export default class Slug extends Vue {
   update?: string
 
   thumbnail?: string
+
+  summary?: string
 
   slug?: string
 
@@ -110,6 +114,11 @@ export default class Slug extends Vue {
           hid: 'og:image:alt',
           property: 'og:image:alt',
           content: this.title
+        },
+        {
+          hid: 'og:description',
+          property: 'og:description',
+          content: this.summary
         }
       ]
     }
