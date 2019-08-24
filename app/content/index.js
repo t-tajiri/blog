@@ -9,7 +9,7 @@ const getFiles = (dir) => {
     if (fs.statSync(dir + file).isDirectory()) {
       fileList = getFiles(dir + file + '/')
     } else {
-      const markdownFile = fs.readFileSync(`content/blog/${file}`, 'utf-8')
+      const markdownFile = fs.readFileSync(`app/content/blog/${file}`, 'utf-8')
       const fileContents = parseMarkdown(markdownFile)
       const date = fileContents.date
       const slug = file
@@ -27,7 +27,7 @@ const getFiles = (dir) => {
 }
 
 const writeBlogs = async () => {
-  const fileArray = await getFiles('content/blog/')
+  const fileArray = await getFiles('app/content/blog/')
   const sortedArray = await fileArray.sort((a, b) => {
     return a.date.getTime() - b.date.getTime()
   })
@@ -35,7 +35,7 @@ const writeBlogs = async () => {
   const reversedArray = await sortedArray.reverse()
   const jsonContent = await JSON.stringify(reversedArray)
 
-  fs.writeFile('content/blogs.json', jsonContent, (err) => {
+  fs.writeFile('app/content/blogs.json', jsonContent, (err) => {
     if (err) {
       throw new Error(err.toString())
     }

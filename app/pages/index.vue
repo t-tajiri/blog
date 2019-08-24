@@ -14,7 +14,6 @@
 import { Component, Vue } from 'vue-property-decorator'
 import Container from '~/components/Container.vue'
 import ArticleCard from '~/components/ArticleCard.vue'
-// @ts-ignore
 import blogs from '~/content/blogs.json'
 
 @Component({

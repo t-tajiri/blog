@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { Configuration as NuxtConfiguration } from '@nuxt/types'
-import blogs from './content/blogs.json'
+import blogs from './app/content/blogs.json'
 import { Configuration } from '~/node_modules/@types/webpack'
 /* eslint-enable */
 
@@ -8,6 +8,7 @@ const routes: string[] = ([] as string[]).concat(blogs.map(blog => `/blog/${blog
 
 const config: NuxtConfiguration = {
   mode: 'universal',
+  srcDir: 'app/',
   dir: {},
   env: {
     NUXT_ENV_GITHUB_URL: 'https://github.com/t-tajiri',
