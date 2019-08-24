@@ -31,6 +31,10 @@ export default class Container extends Vue {
   max-width: 50vw;
 }
 
-.flex {
+.container.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 </style>

@@ -40,13 +40,13 @@ export default class ArticleCard extends Vue {
 }
 </script>
 
-<style>
+<style scoped>
 a {
   text-decoration: none;
 }
 
 article {
-  display: flex;
+  width: calc(66% - 1rem);
   margin-top: 2rem;
 }
 
@@ -58,7 +58,7 @@ article {
   min-height: 540px;
   overflow: hidden;
   position: relative;
-  width: 70%;
+  width: 100%;
 }
 
 .article:hover .article__data {
@@ -97,7 +97,7 @@ article {
   display: block;
   font-size: 14px;
   font-weight: 700;
-  margin-left: 43.2em;
+  margin-left: 45.2em;
   line-height: 1;
   position: relative;
   text-align: center;
