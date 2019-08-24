@@ -2,20 +2,23 @@
   <div>
     <Header />
     <nuxt />
+    <Footer />
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import Header from '~/components/Header.vue'
+import Footer from '~/components/Footer.vue'
 
 @Component({
-  name: 'Container',
+  name: 'Layout',
   components: {
-    Header: Header
+    Header: Header,
+    Footer: Footer
   }
 })
-export default class Container extends Vue {
+export default class Layout extends Vue {
 }
 </script>
 
