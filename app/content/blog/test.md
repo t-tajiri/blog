@@ -3,6 +3,7 @@ title: テスト記事
 date: 2019-07-27T17:02:30.205Z
 update: 2019-07-28T04:29:03.237Z
 thumbnail: /images/uploads/pawel-furman-jo21h-4lyfu-unsplash.jpg
+summary: 本叢書は洽ねく大家の手に成るもの、或は青年の必讀書として世に傳はるものゝ中より、
 ---
 アーサー王物語より引用
 
