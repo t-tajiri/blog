@@ -95,10 +95,9 @@ article {
 .article__data__content__more {
   color: #535353;
   display: block;
+  margin: 0.35em auto 0;
   font-size: 14px;
   font-weight: 700;
-  margin-left: 45.2em;
-  line-height: 1;
   position: relative;
   text-align: center;
   width: 100px;
