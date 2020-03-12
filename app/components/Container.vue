@@ -5,18 +5,21 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator'
+import Vue from 'vue'
 
-@Component({
-  name: 'Container'
+export default Vue.extend({
+  name: 'Container',
+  props: {
+    narrow: {
+      type: Boolean,
+      default: false
+    },
+    flex: {
+      type: Boolean,
+      default: false
+    }
+  }
 })
-export default class Container extends Vue {
-  @Prop({ default: false })
-  narrow!: boolean
-
-  @Prop({ default: false })
-  flex!: boolean
-}
 </script>
 
 <style scoped>

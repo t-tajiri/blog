@@ -11,13 +11,13 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
-import Container from '~/components/Container.vue'
-import ArticleCard from '~/components/ArticleCard.vue'
-import blogs from '~/content/blogs.json'
+import Container from '@/components/Container.vue'
+import ArticleCard from '@/components/ArticleCard.vue'
+import blogs from '@/content/blogs.json'
+import Vue from 'vue'
 
-@Component({
-  name: 'index',
+export default Vue.extend({
+  name: 'Index',
   components: {
     ArticleCard,
     Container
@@ -42,8 +42,6 @@ import blogs from '~/content/blogs.json'
     return blogList
   }
 })
-export default class Index extends Vue {
-}
 </script>
 
 <style>

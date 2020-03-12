@@ -7,19 +7,17 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
-import Header from '~/components/Header.vue'
-import Footer from '~/components/Footer.vue'
+import Header from '@/components/Header.vue'
+import Footer from '@/components/Footer.vue'
+import Vue from 'vue'
 
-@Component({
+export default Vue.extend({
   name: 'Layout',
   components: {
     Header: Header,
     Footer: Footer
   }
 })
-export default class Layout extends Vue {
-}
 </script>
 
 <style>

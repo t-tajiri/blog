@@ -8,10 +8,10 @@
       </div>
       <ul class="header__inline__social-icons">
         <li>
-          <a :href="githubUrl" target="_blank">
+          <a :href="githubUrl" target="_blank" data-testid="github">
             <font-awesome-icon :icon="['fab', 'github']" size="lg" />
           </a>
-          <a :href="twitterUrl" target="_blank">
+          <a :href="twitterUrl" target="_blank" data-testid="twitter">
             <font-awesome-icon :icon="['fab', 'twitter']" size="lg" />
           </a>
         </li>
@@ -21,16 +21,15 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+import Vue from 'vue'
 
-@Component({
-  name: 'Header'
+export default Vue.extend({
+  name: 'Header',
+  data: () => ({
+    githubUrl: process.env.NUXT_ENV_GITHUB_URL,
+    twitterUrl: process.env.NUXT_ENV_TWITTER_URL
+  })
 })
-export default class Header extends Vue {
-  githubUrl?: string = process.env.NUXT_ENV_GITHUB_URL
-
-  twitterUrl?: string = process.env.NUXT_ENV_TWITTER_URL
-}
 </script>
 
 <style scoped>

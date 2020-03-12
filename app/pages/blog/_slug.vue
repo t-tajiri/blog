@@ -13,65 +13,23 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
-import Container from '~/components/Container.vue'
+import Container from '@/components/Container.vue'
+import Vue from 'vue'
 
-@Component({
+export default Vue.extend({
+  name: 'Slug',
   components: {
-    Container: Container
+    Container
   },
-  async asyncData({ params }) {
-    const post = await import(`~/content/blog/${params.slug}.md`)
-    const attr = post.attributes
-    const slug = params.slug
-
-    const {
-      date,
-      title,
-      thumbnail,
-      update,
-      summary
-    } = attr
-
-    const dateOptions = {
-      weekday: 'long',
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric'
-    }
-
-    const publishDate: Date = new Date(date)
-    const updateDate: Date = new Date(date)
-    const published: string = publishDate.toLocaleDateString('japanese', dateOptions)
-    const updated: string = updateDate.toLocaleDateString('japanese', dateOptions)
-
-    return {
-      title,
-      date,
-      update,
-      published,
-      updated,
-      summary,
-      slug,
-      thumbnail,
-      html: post.html
-    }
-  }
-})
-export default class Slug extends Vue {
-  title?: string
-
-  date?: string
-
-  update?: string
-
-  thumbnail?: string
-
-  summary?: string
-
-  slug?: string
-
-  head() {
+  data: () => ({
+    title: String,
+    date: String,
+    update: String,
+    thumbnail: String,
+    summary: String,
+    slug: String
+  }),
+  head(): object {
     return {
       title: `${this.title} | 'Sample'`,
       meta: [
@@ -122,8 +80,45 @@ export default class Slug extends Vue {
         }
       ]
     }
+  },
+  async asyncData({ params }) {
+    const post = await import(`@/content/blog/${params.slug}.md`)
+    const attr = post.attributes
+    const slug = params.slug
+
+    const {
+      date,
+      title,
+      thumbnail,
+      update,
+      summary
+    } = attr
+
+    const dateOptions = {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric'
+    }
+
+    const publishDate: Date = new Date(date)
+    const updateDate: Date = new Date(date)
+    const published: string = publishDate.toLocaleDateString('japanese', dateOptions)
+    const updated: string = updateDate.toLocaleDateString('japanese', dateOptions)
+
+    return {
+      title,
+      date,
+      update,
+      published,
+      updated,
+      summary,
+      slug,
+      thumbnail,
+      html: post.html
+    }
   }
-}
+})
 </script>
 
 <style scoped>

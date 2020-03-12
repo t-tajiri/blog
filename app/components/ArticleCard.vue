@@ -21,23 +21,25 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator'
+import Vue from 'vue'
 
-@Component({
-  name: 'ArticleCard'
-})
-export default class ArticleCard extends Vue {
-  @Prop({ default: () => {} })
-  articleInfo?: articleInfo
-
-  summary: string = ''
-
+export default Vue.extend({
+  name: 'ArticleCard',
+  props: {
+    articleInfo: {
+      type: Object,
+      default: undefined
+    }
+  },
+  data: () => ({
+    summary: ''
+  }),
   async mounted() {
-    const { attributes } = await import(`~/content/blog/${this.articleInfo!.link}.md`)
+    const { attributes } = await import(`@/content/blog/${this.articleInfo!.link}.md`)
     const { summary } = attributes
     this.summary = summary
   }
-}
+})
 </script>
 
 <style scoped>

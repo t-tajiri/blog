@@ -5,13 +5,11 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'vue-property-decorator'
+import Vue from 'vue'
 
-@Component({
+export default Vue.extend({
   name: 'Footer'
 })
-export default class Footer extends Vue {
-}
 </script>
 
 <style scoped>
