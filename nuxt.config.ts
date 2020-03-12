@@ -49,9 +49,10 @@ const config: NuxtConfiguration = {
   /*
   ** Nuxt.js modules
   */
-  modules: [
+  buildModules: [
     '@nuxtjs/eslint-module',
     '@nuxtjs/sitemap',
+    '@nuxt/typescript-build',
     'nuxt-fontawesome',
     'nuxt-webfontloader'
   ],
