@@ -19,5 +19,4 @@ collections:
       - {label: "Publish Date", name: "date", widget: "date", required: true}
       - {label: "Updated Date", name: "update", widget: "date", required: false}
       - {label: "Feartured Image", name: "thumbnail", widget: "image", required: true}
-      - {label: "Summary 30-50", name: "summary", widget: "text", required: true, pattern: ['.{30,50}', "Must be within 30 and 50 characters"]}
       - {label: "Body", name: "body", widget: "markdown", required: true}
