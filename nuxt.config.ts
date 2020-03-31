@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { Configuration as NuxtConfiguration } from '@nuxt/types'
 import blogs from './app/content/blogs.json'
-import { Configuration } from '~/node_modules/@types/webpack'
+import { Configuration } from 'webpack'
 /* eslint-enable */
 
 const routes: string[] = ([] as string[]).concat(blogs.map(blog => `/blog/${blog.slug}`))

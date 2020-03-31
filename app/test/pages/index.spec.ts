@@ -6,6 +6,6 @@ describe('pages/index.vue', () => {
 
   it('renders correctly', () => {
     wrapper = shallowMount(Index)
-    expect(wrapper.name()).toBe('index')
+    expect(wrapper.name()).toBe('Index')
   })
 })
