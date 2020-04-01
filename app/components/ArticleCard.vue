@@ -1,20 +1,18 @@
 <template>
-  <article>
-    <nuxt-link :to="`/blog/${articleInfo.link}`">
-      <div
-        :style="{ background: 'url(' + articleInfo.attributes.thumbnail + ') 20% 1% / cover no-repeat' }"
-        class="article"
-      >
-        <div class="article__data">
-          <div class="article__data__content">
-            <h4 class="article__data__content__title">
-              {{ articleInfo.attributes.title }}
-            </h4>
-          </div>
-        </div>
+  <nuxt-link :to="`/blog/${articleInfo.link}`">
+    <div
+      class="article"
+    >
+      <div class="content">
+        <img :src="articleInfo.attributes.thumbnail" class="image">
+        <h4 class="title title__background">
+          <span class="title__text">
+            {{ articleInfo.attributes.title }}
+          </span>
+        </h4>
       </div>
-    </nuxt-link>
-  </article>
+    </div>
+  </nuxt-link>
 </template>
 
 <script lang="ts">
@@ -44,39 +42,38 @@ export default Vue.extend({
     text-decoration: none;
   }
 
-  article {
-    width: calc(66% - 1rem);
+  .article {
     margin-top: 2rem;
   }
 
-  .article {
-    background-color: #ffffff;
-    border-radius: 0.5rem;
-    color: #808080;
-    float: left;
-    min-height: 540px;
-    overflow: hidden;
+  .content {
     position: relative;
     width: 100%;
+    height: auto;
   }
 
-  .article__data {
+  .image { max-width: 700px; }
+
+  @media screen and (max-width: 480px) {
+    .image { max-width: 300px; }
+  }
+
+  .title {
     position: absolute;
     bottom: 0;
+    padding-bottom: 2.5vh;
     width: 100%;
   }
 
-  .article__data__content {
-    padding: 1em;
-    position: relative;
-    z-index: 1;
-    background-color: #f1f3f5;
-    box-shadow: 0 5px 30px 10px rgba(0, 0, 0, 0.3);
+  .title__background {
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.7);
+  }
+  .title__text {
+    color: white;
+    font-size: 1.7em;
+    font-family: 'Open Sans', sans-serif;
+    padding: 18px;
   }
 
-  .article__data__content__title {
-    color: #535353;
-    font-size: 1.5rem;
-    font-family: 'Open Sans', sans-serif;
-  }
 </style>
