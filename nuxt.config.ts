@@ -11,8 +11,8 @@ const config: NuxtConfiguration = {
   srcDir: 'app/',
   dir: {},
   env: {
-    NUXT_ENV_GITHUB_URL: 'https://github.com/t-tajiri',
-    NUXT_ENV_TWITTER_URL: 'https://twitter.com/tajiridev'
+    NUXT_ENV_GITHUB_URL: 'https://github.com/tt-tajiri',
+    NUXT_ENV_TWITTER_URL: 'https://twitter.com/tt_tajiri'
   },
   /*
   ** Headers of the page
