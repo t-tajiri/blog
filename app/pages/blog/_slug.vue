@@ -4,10 +4,13 @@
       <h1 class="post__title">
         {{ title }}
       </h1>
+      <h4 class="post__date">
+        {{ getJapaneseDate }}
+      </h4>
     </Container>
     <Container :narrow="true">
-      <img v-lazy="thumbnail" class="post__content__thumbnail" :alt="title">
-      <div class="post__content__slug" v-html="html" />
+      <img v-lazy="thumbnail" :alt="title" class="post__content__thumbnail">
+      <div v-html="html" class="post__content__slug" />
     </Container>
   </section>
 </template>
@@ -81,6 +84,11 @@ export default Vue.extend({
       ]
     }
   },
+  computed: {
+    getJapaneseDate() {
+      return new Date(Date.parse(this.$data.date)).toLocaleDateString('ja-JP')
+    }
+  },
   async asyncData({ params }) {
     const post = await import(`@/content/blog/${params.slug}.md`)
     const attr = post.attributes
@@ -134,11 +142,14 @@ export default Vue.extend({
 }
 
 .post__title {
-display: block;
-margin-top: 1rem;
-margin-bottom: 3rem;
-text-align: center;
-width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 0.8rem;
+  text-align: center;
+}
+
+.post__date {
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 .post__content__thumbnail {
