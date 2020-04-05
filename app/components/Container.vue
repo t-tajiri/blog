@@ -26,7 +26,8 @@ export default Vue.extend({
 .container {
   display: block;
   margin: 0 auto;
-  width: 50vw;
+  width: 50vh;
+  max-width: 1080px;
 }
 
 .container.flex {
