@@ -1,5 +1,5 @@
 <template>
-  <div class="container" :class="{ narrow, flex }">
+  <div :class="{ flex }" class="container">
     <slot />
   </div>
 </template>
@@ -26,12 +26,7 @@ export default Vue.extend({
 .container {
   display: block;
   margin: 0 auto;
-  max-width: 65vw;
-  padding: 0 1rem;
-}
-
-.container.narrow {
-  max-width: 50vw;
+  width: 50vw;
 }
 
 .container.flex {

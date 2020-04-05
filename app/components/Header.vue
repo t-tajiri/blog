@@ -41,8 +41,8 @@ export default Vue.extend({
 .header__inline {
   align-items: center;
   display: flex;
+  padding: 0 30px;
   margin: 0 auto;
-  max-width: 65vw;
   justify-content: space-between;
 }
 

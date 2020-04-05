@@ -49,13 +49,26 @@ export default Vue.extend({
   .content {
     position: relative;
     width: 100%;
-    height: auto;
   }
 
-  .image { max-width: 700px; }
+  .image {
+    width: 700px;
+    height: 450px;
+    object-fit: cover;
+   }
+
+  @media screen and (max-width: 900px) {
+    .image {
+      width: 500px;
+      height: 350px;
+    }
+  }
 
   @media screen and (max-width: 480px) {
-    .image { max-width: 300px; }
+    .image {
+      width: 300px;
+      height: 200px;
+    }
   }
 
   .title {
