@@ -1,5 +1,5 @@
 <template>
-  <div :class="{ flex }" class="container">
+  <div :class="{ flex }" :style="{ 'width': width }" class="container">
     <slot />
   </div>
 </template>
@@ -17,6 +17,10 @@ export default Vue.extend({
     flex: {
       type: Boolean,
       default: false
+    },
+    width: {
+      type: String,
+      default: '50vw'
     }
   }
 })
@@ -26,7 +30,6 @@ export default Vue.extend({
 .container {
   display: block;
   margin: 0 auto;
-  width: 50vh;
   max-width: 1080px;
 }
 
