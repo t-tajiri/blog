@@ -1,16 +1,14 @@
 <template>
   <section class="post">
-    <Container class="post__header">
-      <h1 class="post__title">
+    <Container width="80vw">
+      <h1 class="header__title">
         {{ title }}
       </h1>
-      <h4 class="post__date">
+      <h4 class="header__date">
         {{ getJapaneseDate }}
       </h4>
-    </Container>
-    <Container :narrow="true">
-      <img v-lazy="thumbnail" :alt="title" class="post__content__thumbnail">
-      <div v-html="html" class="post__content__slug" />
+      <img v-lazy="thumbnail" :alt="title" class="thumbnail">
+      <div v-html="html" class="slug" />
     </Container>
   </section>
 </template>
@@ -135,26 +133,25 @@ export default Vue.extend({
   margin: 0 auto;
 }
 
-.post__header {
-  color: #535353;
-  font-size: 1.8rem;
-  font-weight: 700;
-}
-
-.post__title {
-  margin-top: 1rem;
-  margin-bottom: 0.8rem;
+.header__title {
   text-align: center;
+  margin-bottom: 0.5rem;
+  font-size: calc(1em + 1.5vmin);
 }
 
-.post__date {
+.header__date {
   text-align: center;
   margin-bottom: 1rem;
+  font-size: calc(1em + 0.5vmin);
 }
 
-.post__content__thumbnail {
+.thumbnail {
   margin-bottom: 2.4rem;
   height: auto;
   width: 100%;
+}
+
+.slug {
+  font-size: calc(1em + .5vmin);
 }
 </style>
