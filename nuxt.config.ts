@@ -11,7 +11,7 @@ const config: NuxtConfiguration = {
   srcDir: 'app/',
   dir: {},
   env: {
-    NUXT_ENV_GITHUB_URL: 'https://github.com/tt-tajiri',
+    NUXT_ENV_GITHUB_URL: 'https://github.com/t-tajiri',
     NUXT_ENV_TWITTER_URL: 'https://twitter.com/tt_tajiri'
   },
   /*
@@ -106,7 +106,7 @@ const config: NuxtConfiguration = {
   ** Build configuration
   */
   build: {
-    extend(config: Configuration, ctx) {
+    extend(config: Configuration, _) {
       config.module!.rules.push({
         test: /\.md$/,
         loader: 'frontmatter-markdown-loader',
