@@ -7,7 +7,7 @@
   "scripts": {
     "lint": "eslint --ext .ts,.js,.vue --ignore-path .gitignore .",
     "precommit": "yarn lint",
-    "test": "jest",
+    "test": "jest --coverage",
     "dev": "node app/content/index.js && nuxt-ts",
     "build": "nuxt-ts build",
     "start": "nuxt-ts start",
