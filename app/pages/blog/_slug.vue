@@ -152,6 +152,6 @@ export default Vue.extend({
 }
 
 .slug {
-  font-size: calc(1em + .5vmin);
+  font-size: calc(1em + .1vmin);
 }
 </style>
