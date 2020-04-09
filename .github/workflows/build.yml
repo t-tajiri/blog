@@ -22,9 +22,15 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
+    # yarn install
+    - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install
+
+    # yarn test
     - uses: borales/actions-yarn@v2.0.0
       with:
-        cmd: test # will run `yarn test` command
+        cmd: test
 
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@master
