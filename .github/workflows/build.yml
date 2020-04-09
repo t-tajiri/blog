@@ -58,6 +58,7 @@ jobs:
       - name: list up for debug
         working-directory: ./coverage
         run: | 
+          cd ${GITHUB_WORKSPACE}
           pwd
           ls -l ${GITHUB_WORKSPACE}
           ls -l ${GITHUB_WORKSPACE}/coverage
