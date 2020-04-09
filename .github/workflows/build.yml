@@ -59,7 +59,8 @@ jobs:
         working-directory: ./coverage
         run: | 
           pwd
-          ls -l
+          ls -l /github/workspace/
+          ls -l /github/workspace/coverage
 
       - name: analysis with SonarCloud
         uses: sonarsource/sonarcloud-github-action@master
