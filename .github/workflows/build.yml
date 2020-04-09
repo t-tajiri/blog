@@ -12,14 +12,10 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+
     - name: checkout
       uses: actions/checkout@v2
 
@@ -33,15 +29,29 @@ jobs:
       with:
         cmd: test
 
-    # move coverage files 
-    # see: https://community.sonarsource.com/t/code-coverage-doesnt-work-with-github-action/16747/6
-    # - name: fix code coverage paths
-    #   working-directory: ./coverage
-    #   run:
-    #     sed -i 's/\/home\/runner\/work\/blog\/blog\//\/github\/workspace\//g' lcov.info
+    - name: Archive coverage results
+      uses: actions/upload-artifact@v1
+      with:
+        name: coverage-report
+        path: coverage
 
-    - name: SonarCloud Scan
-      uses: sonarsource/sonarcloud-github-action@master
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+  staticAnalysis:
+    needs: build
+    name: static analysis
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: Download coverage results
+        uses: actions/download-artifact@v1
+        with:
+          name: coverage-report
+          path: coverage
+
+      - name: analysis with SonarCloud
+        uses: sonarsource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
