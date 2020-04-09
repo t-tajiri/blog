@@ -57,7 +57,8 @@ jobs:
 
       - name: list up for debug
         working-directory: ./coverage
-        run:
+        run: | 
+          pwd
           ls -l
 
       - name: analysis with SonarCloud
