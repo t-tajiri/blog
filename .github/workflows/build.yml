@@ -55,6 +55,11 @@ jobs:
         run:
           sed -i 's/\/home\/runner\/work\/blog\/blog\/coverage\//\/github\/workspace\//g' lcov.info
 
+      - name: list up for debug
+        working-directory: ./coverage
+        run:
+          ls -l
+
       - name: analysis with SonarCloud
         uses: sonarsource/sonarcloud-github-action@master
         env:
