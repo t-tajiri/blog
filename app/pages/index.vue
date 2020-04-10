@@ -22,7 +22,7 @@ export default Vue.extend({
     ArticleCard,
     Container
   },
-  async asyncData({ app }) {
+  async asyncData() {
     async function awaitImport(blog) {
       const markDown = await import(`~/content/blog/${blog.slug}.md`)
       return {
