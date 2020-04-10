@@ -1,5 +1,5 @@
+import Index from '@/pages/index.vue'
 import { shallowMount } from '@vue/test-utils'
-import Index from '~/pages/index.vue'
 
 interface BlogList {
   blogList: []
