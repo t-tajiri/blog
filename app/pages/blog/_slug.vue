@@ -108,7 +108,7 @@ export default Vue.extend({
     }
 
     const publishDate: Date = new Date(date)
-    const updateDate: Date = new Date(date)
+    const updateDate: Date = new Date(update)
     const published: string = publishDate.toLocaleDateString('japanese', dateOptions)
     const updated: string = updateDate.toLocaleDateString('japanese', dateOptions)
 
