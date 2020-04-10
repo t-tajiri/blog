@@ -4,9 +4,9 @@
       class="article"
     >
       <div class="content">
-        <img :src="articleInfo.attributes.thumbnail" class="image">
+        <img :src="articleInfo.attributes.thumbnail" :alt="articleInfo.attributes.title" class="image">
         <h4 class="title title__background">
-          <span class="title__text">
+          <span class="title__text" data-testid="articlecard_title">
             {{ articleInfo.attributes.title }}
           </span>
         </h4>
@@ -23,16 +23,8 @@ export default Vue.extend({
   props: {
     articleInfo: {
       type: Object,
-      default: undefined
+      required: true
     }
-  },
-  data: () => ({
-    summary: ''
-  }),
-  async mounted() {
-    const { attributes } = await import(`@/content/blog/${this.articleInfo!.link}.md`)
-    const { summary } = attributes
-    this.summary = summary
   }
 })
 </script>
