@@ -2,7 +2,7 @@ import * as fs from 'fs'
 const parseMarkdown = require('front-matter-markdown')
 
 export interface files {
-  date: Date,
+  date: string,
   slug: string
 }
 
@@ -10,6 +10,7 @@ export function getFiles(dir) {
   // eslint-disable-next-line prefer-const
   let files: Array<files> = []
 
+  // synchronous i/o function is better at performance
   const f = fs.readdirSync(dir)
 
   f.forEach((file) => {
@@ -28,10 +29,22 @@ export function getFiles(dir) {
 }
 
 export function writeBlog() {
-  const jsonContent = JSON.stringify('test')
+  // const files = getFiles('app/content/blog/')
+  /* eslint-disable indent */
+  const files: Array<files> = [{ date: '2020-04-05T13:20:15.881Z', slug: 'test1' },
+                               { date: '2020-04-01T13:50:00.193Z', slug: 'test2' }]
+  /* eslint-enable indent */
+
+  files.sort((a, b) => {
+    return new Date(a.date).getTime() - new Date(b.date).getTime()
+  })
+
+  files.reverse()
+
+  const jsonContent = JSON.stringify(files)
   fs.writeFile('app/content/blogs.json', jsonContent, (err) => {
     if (err) {
-      console.error(err.message)
+      throw new Error(err.message)
     }
   })
 }
