@@ -1,9 +1,9 @@
 import * as fs from 'fs'
-import { BlogContent } from '~/app/content/index2'
+import { files } from '~/app/content/index2'
 const parseMarkdown = require('front-matter-markdown')
 
 export function getFiles(dir) {
-  let files: Array<BlogContent> = []
+  let files: Array<files> = []
 
   // synchronous i/o function is better at performance
   const f = fs.readdirSync(dir)
