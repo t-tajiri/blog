@@ -53,29 +53,29 @@ describe('content/index.js', () => {
         expect(parseMarkdown).toHaveBeenNthCalledWith(index + 1, file)
       })
     })
-  })
 
-  it('returns array of all markdown titles and date', () => {
-    const markdownFiles = ['file1.md', 'file2.md', 'file3.md']
-    const contentDate = new Date()
+    it('returns array of all markdown titles and date', () => {
+      const markdownFiles = ['file1.md', 'file2.md', 'file3.md']
+      const contentDate = new Date()
 
-    // eslint-disable-next-line prefer-const
-    let value: Array<any> = []
-    markdownFiles.forEach((file) => {
-      const slug = file.split('.')[0].toString()
-      value.push({ date: contentDate, slug: slug })
+      // eslint-disable-next-line prefer-const
+      let value: Array<any> = []
+      markdownFiles.forEach((file) => {
+        const slug = file.split('.')[0].toString()
+        value.push({ date: contentDate, slug: slug })
+      })
+
+      fs.readdirSync.mockReturnValue(markdownFiles)
+      /* eslint-disable indent */
+      fs.readFileSync.mockReturnValueOnce(markdownFiles[0])
+        .mockReturnValueOnce(markdownFiles[1])
+        .mockReturnValueOnce(markdownFiles[2])
+      /* eslint-enable indent */
+      parseMarkdown.mockReturnValue({ date: contentDate })
+
+      const result = getFiles(markdownFiles)
+
+      expect(result).toStrictEqual(value)
     })
-
-    fs.readdirSync.mockReturnValue(markdownFiles)
-    /* eslint-disable indent */
-    fs.readFileSync.mockReturnValueOnce(markdownFiles[0])
-      .mockReturnValueOnce(markdownFiles[1])
-      .mockReturnValueOnce(markdownFiles[2])
-    /* eslint-enable indent */
-    parseMarkdown.mockReturnValue({ date: contentDate })
-
-    const result = getFiles(markdownFiles)
-
-    expect(result).toStrictEqual(value)
   })
 })
