@@ -1,6 +1,6 @@
 ---
 title: visitor pattern
-date: 2020-04-30T14:27:34.187Z
+date: 2020-05-01T14:27:34.187Z
 update: ""
 thumbnail: /images/uploads/corina-rainer-f6s6c67fzbs-unsplash.jpg
 ---
