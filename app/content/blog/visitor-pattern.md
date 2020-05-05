@@ -10,17 +10,21 @@ thumbnail: /images/uploads/corina-rainer-f6s6c67fzbs-unsplash.jpg
 
 # Visitor パターンとは
 
+baeldung.com によれば以下の通り。
 > The purpose of a Visitor pattern is to define a new operation without introducing the modifications to an existing object structure.
 (拙訳: 既存のオブジェクトの構造を変更せずに、アルゴリズム・一連の処理を簡単に追加できることを目的とする)
 
-オブジェクトの構造とは？アルゴリズムを簡単に追加できるとはどういうことなのか？
+アルゴリズムを簡単に追加できるとはどういうことなのか？
 もう少し深掘りしてみる。
-
-## オブジェクトの構造について
 
 ## アルゴリズムを追加することが困難な状況について
 
+// TODO
+
 # メリット
+
+// TODO 
+// Open Closed Principle についても触れておく。
 
 # デメリット、アンチパターン
 
