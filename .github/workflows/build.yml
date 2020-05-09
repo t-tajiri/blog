@@ -60,3 +60,20 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+  measurePage:
+    needs: staticAnalysis
+    name: measuring page performance
+    inputs:
+      who-to-greet:  # id of input
+        description: 'Who to greet'
+        required: true
+        default: 'World'
+
+    outputs:
+      time: # id of output
+        description: 'The time we greeted you'
+
+    runs:
+      using: 'node12'
+      main: 'measure.js'
