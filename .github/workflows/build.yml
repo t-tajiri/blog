@@ -77,8 +77,6 @@ jobs:
       - name: yarn measure
         run: yarn measure
         id: measure
-        with:
-          who-to-greet:  'World'
 
       - name: output results
         run: echo "The time was ${{ steps.measure.outputs.time }}"
