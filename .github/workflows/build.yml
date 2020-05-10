@@ -74,6 +74,8 @@ jobs:
         with:
           node-version: '12.x'
 
+      - run: yarn install
+
       - name: yarn measure
         run: yarn measure
         id: measure
