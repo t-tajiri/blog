@@ -11,7 +11,8 @@
     "dev": "node app/content/index.js && nuxt-ts",
     "build": "nuxt-ts build",
     "start": "nuxt-ts start",
-    "generate": "node app/content/index.js && nuxt-ts generate"
+    "generate": "node app/content/index.js && nuxt-ts generate",
+    "measure": "node measure.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.21",

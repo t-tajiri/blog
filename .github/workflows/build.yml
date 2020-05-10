@@ -64,16 +64,21 @@ jobs:
   measurePage:
     needs: staticAnalysis
     name: measuring page performance
-    inputs:
-      who-to-greet:  # id of input
-        description: 'Who to greet'
-        required: true
-        default: 'World'
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
 
-    outputs:
-      time: # id of output
-        description: 'The time we greeted you'
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
 
-    runs:
-      using: 'node12'
-      main: 'measure.js'
+      - name: yarn measure
+        run: yarn measure
+        id: measure
+        with:
+          who-to-greet:  'World'
+
+      - name: output results
+        run: echo "The time was ${{ steps.measure.outputs.time }}"
