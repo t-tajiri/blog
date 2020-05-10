@@ -19,15 +19,14 @@ jobs:
     - name: checkout
       uses: actions/checkout@v2
 
-    - name: yarn install
-      uses: borales/actions-yarn@v2.0.0
+    - name: Use Node.js
+      uses: actions/setup-node@v1
       with:
-        cmd: install
+        node-version: '14.x'
 
-    - name: yarn test
-      uses: borales/actions-yarn@v2.0.0
-      with:
-        cmd: test
+    - run: yarn install
+
+    - run: yarn test
 
     - name: Archive coverage results
       uses: actions/upload-artifact@v1
@@ -72,7 +71,7 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v1
         with:
-          node-version: '12.x'
+          node-version: '14.x'
 
       - run: yarn install
 
