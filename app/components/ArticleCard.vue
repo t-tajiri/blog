@@ -4,7 +4,6 @@
       class="article"
     >
       <div class="content">
-        <img :src="articleInfo.attributes.thumbnail" :alt="articleInfo.attributes.title" class="image">
         <h4 class="title title__background">
           <span class="title__text" data-testid="articlecard_title">
             {{ articleInfo.attributes.title }}
@@ -41,26 +40,6 @@ export default Vue.extend({
   .content {
     position: relative;
     width: 100%;
-  }
-
-  .image {
-    width: 700px;
-    height: 450px;
-    object-fit: cover;
-   }
-
-  @media screen and (max-width: 900px) {
-    .image {
-      width: 500px;
-      height: 350px;
-    }
-  }
-
-  @media screen and (max-width: 480px) {
-    .image {
-      width: 300px;
-      height: 200px;
-    }
   }
 
   .title {

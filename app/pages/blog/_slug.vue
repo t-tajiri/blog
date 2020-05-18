@@ -7,7 +7,6 @@
       <h4 class="header__date">
         {{ getJapaneseDate }}
       </h4>
-      <img v-lazy="thumbnail" :alt="title" class="thumbnail">
       <div v-html="html" class="slug" />
     </Container>
   </section>
@@ -26,7 +25,6 @@ export default Vue.extend({
     title: String,
     date: String,
     update: String,
-    thumbnail: String,
     summary: String,
     slug: String
   }),
@@ -65,11 +63,6 @@ export default Vue.extend({
           content: 'article'
         },
         {
-          hid: 'og:image',
-          property: 'og:image',
-          content: `https://<domain>${this.thumbnail}`
-        },
-        {
           hid: 'og:image:alt',
           property: 'og:image:alt',
           content: this.title
@@ -95,7 +88,6 @@ export default Vue.extend({
     const {
       date,
       title,
-      thumbnail,
       update,
       summary
     } = attr
@@ -120,7 +112,6 @@ export default Vue.extend({
       updated,
       summary,
       slug,
-      thumbnail,
       html: post.html
     }
   }
@@ -143,12 +134,6 @@ export default Vue.extend({
   text-align: center;
   margin-bottom: 1rem;
   font-size: calc(1em + 0.5vmin);
-}
-
-.thumbnail {
-  margin-bottom: 2.4rem;
-  height: auto;
-  width: 100%;
 }
 
 .slug {

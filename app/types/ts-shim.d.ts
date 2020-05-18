@@ -21,7 +21,6 @@ type articleInfo = {
 type attributes = {
   _meta: meta,
   date: string,
-  thumbnail: string,
   title: string,
   update: string
 }

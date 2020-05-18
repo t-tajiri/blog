@@ -2,7 +2,6 @@
 title: css journey
 date: 2020-04-01T13:50:00.193Z
 update: ''
-thumbnail: /images/uploads/robert-gomez-cwxz8rye-_8-unsplash.jpg
 ---
 
 CSSフルスクラッチでやるとなかなかしんどい....そんな思える今日この頃。  

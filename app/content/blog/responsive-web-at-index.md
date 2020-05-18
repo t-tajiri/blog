@@ -2,7 +2,6 @@
 title: responsive web at index
 date: 2020-04-05T13:20:15.881Z
 update: 2020-04-05T13:20:15.888Z
-thumbnail: /images/uploads/nick-bolton-ftucoaufoim-unsplash.jpg
 ---
 今日はレスポンシブ引き続きレスポンシブ対応の話を書く
 
