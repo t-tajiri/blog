@@ -1,6 +1,6 @@
 <template>
   <footer class="footer">
-    <span class="footer__copyright">©︎ 2019 t-tajiri</span>
+    <span class="footer__copyright">©︎ 2020 t-tajiri</span>
   </footer>
 </template>
 
