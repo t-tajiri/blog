@@ -1,11 +1,17 @@
 <template>
   <section>
     <Container :flex="true">
-      <ArticleCard
-        v-for="(blog, index) in blogList"
-        :key="index"
-        :article-info="blog"
-      />
+      <ul>
+        <li
+          v-for="(blog, index) in blogList"
+          :key="index"
+          class="nodot"
+        >
+          <ArticleCard
+            :article-info="blog"
+          />
+        </li>
+      </ul>
     </Container>
   </section>
 </template>
@@ -43,3 +49,9 @@ export default Vue.extend({
   }
 })
 </script>
+
+<style scoped>
+.nodot {
+ list-style: none;
+}
+</style>
