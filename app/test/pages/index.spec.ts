@@ -8,7 +8,6 @@ interface BlogList {
 describe('pages/index.vue', () => {
   it('renders correctly', () => {
     const wrapper = shallowMount(Index)
-    expect(wrapper.name()).toBe('Index')
   })
 
   it('renders from retrieve blog data', async () => {

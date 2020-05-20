@@ -9,7 +9,5 @@ Vue.use(VueLazyload)
 describe('Slug.vue', () => {
   it('renders correctly', () => {
     const wrapper = shallowMount(Slug)
-
-    expect(wrapper.isVueInstance()).toBeTruthy()
   })
 })

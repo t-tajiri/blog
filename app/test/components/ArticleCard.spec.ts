@@ -5,8 +5,6 @@ describe('ArticleCard.vue', () => {
   it('renders correctly', () => {
     const articleInfo = { link: null, attributes: {} }
     const wrapper = shallowMount(ArticleCard, { propsData: { articleInfo }, stubs: ['nuxt-link'] })
-
-    expect(wrapper.isVueInstance()).toBeTruthy()
   })
 
   it('renders article title', () => {
