@@ -30,7 +30,7 @@ export default Vue.extend({
   }),
   head(): object {
     return {
-      title: `${this.title} | 'Sample'`,
+      title: `${this.title}`,
       meta: [
         {
           hid: 'article:published_time',

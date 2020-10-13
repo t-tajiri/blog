@@ -35,10 +35,10 @@ export default Vue.extend({
 <style scoped>
 .header {
   font-family: 'Lobster', cursive;
-  width: 100%;
 }
 
 .header__inline {
+  max-width: 1260px;
   align-items: center;
   display: flex;
   padding: 0 30px;

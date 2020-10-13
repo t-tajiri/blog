@@ -2,7 +2,7 @@
   <nuxt-link :to="`/blog/${articleInfo.link}`">
     <div class="article">
       <h1 class="title title__background">
-        <span>
+        <span class="title__date">
           {{ new Date(Date.parse(articleInfo.attributes.date)).toLocaleDateString('ja-JP') }}
         </span>
         <span class="title__text" data-testid="articlecard_title">
@@ -30,10 +30,15 @@ export default Vue.extend({
 <style scoped>
   a {
     text-decoration: none;
+    color: #222222;
+  }
+
+  a:hover, a:focus {
+    text-decoration: underline;
   }
 
   .article {
-    margin-top: 2rem;
+    margin-top: 10px;
     position: relative;
     width: 100%;
   }
